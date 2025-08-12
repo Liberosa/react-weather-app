@@ -2,7 +2,7 @@ import Form from "./Form.tsx";
 import Weather from "./Weather.tsx";
 import {useState} from "react";
 import {api_key, baseURL} from "../utils/constants";
-import type {WeatherInfo} from "../interfaces.ts";
+import type {WeatherInfo} from "../utils/types.d.ts";
 
 const Data = () => {
     const [message, setMessage] = useState('Enter city name');
@@ -16,7 +16,7 @@ const Data = () => {
                     city: data.name,
                     temp: data.main.temp,
                     pressure: data.main.pressure,
-                    sunset: (new Date(data.sys.sunset * 1000)).toLocaleTimeString(),
+                    sunset: (new Date(data.sys.sunset * 1000)),
                 });
                 setMessage('')
             })

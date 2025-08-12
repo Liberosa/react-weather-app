@@ -1,4 +1,4 @@
-import type {WeatherProps} from "../interfaces";
+import type {WeatherProps} from "../utils/types";
 const Weather = ({weather, message}:WeatherProps) => {
 
     return (
@@ -8,7 +8,7 @@ const Weather = ({weather, message}:WeatherProps) => {
                 <p>Location: {weather.country},{weather.city}</p>
                 <p>Temp:{weather.temp}</p>
                 <p>Pressure: {weather.pressure}</p>
-                <p>Sunset: {weather.sunset}</p>
+                <p>Sunset: {weather.sunset!.toLocaleTimeString()}</p>
             </>
             }
             {message}

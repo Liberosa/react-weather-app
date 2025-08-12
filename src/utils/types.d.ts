@@ -3,7 +3,7 @@ interface WeatherInfo {
     city?: string;
     temp?: number;
     pressure?: number;
-    sunset?: string|undefined;
+    sunset?: Date|undefined;
 }
 
 interface WeatherProps {

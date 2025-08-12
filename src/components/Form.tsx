@@ -1,5 +1,5 @@
 import type {FormEvent} from "react";
-import type {FormProps} from "../interfaces.ts";
+import type {FormProps} from "../utils/types.d.ts";
 
 
 const Form = ({getWeather}:FormProps) => {
