@@ -1,6 +1,8 @@
-import {Fragment} from "react";
+import {useSelector} from "react-redux";
 
-const Weather = ({weather, message}) => {
+const Weather = () => {
+    const weather = useSelector(state => state.weather);
+    const message = useSelector(state => state.message);
 
     return (
         <div className={'infoWeath'}>

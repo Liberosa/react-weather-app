@@ -1,8 +1,13 @@
-const Form = ({getWeather}) => {
+import {useDispatch} from "react-redux";
+import {fetchWeather} from "../features/api/weatherActions.js";
+
+const Form = () => {
+    const dispatch = useDispatch();
+
     const getCity = e => {
         e.preventDefault();
         const city = e.currentTarget.city.value.trim();
-        getWeather(city);
+        dispatch(fetchWeather(city));
     }
     return (
         <form onSubmit={getCity}>
