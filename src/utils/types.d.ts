@@ -4,4 +4,5 @@ export interface WeatherInfo {
     temp: number;
     pressure: number;
     sunset: string;
+    error?: string;
 }

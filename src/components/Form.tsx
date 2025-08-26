@@ -1,4 +1,4 @@
-import {fetchWeather} from "../features/api/weatherActions.ts";
+import {fetchWeather} from "../features/api/fetchWeather.ts";
 import type {FormEvent} from "react";
 import {useAppDispatch} from "../app/hooks.ts";
 
