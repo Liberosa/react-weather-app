@@ -2,9 +2,9 @@ import {api_key, base_url} from "../../utils/constants.ts";
 import {createAsyncThunk} from "@reduxjs/toolkit";
 import type {WeatherInfo} from "../../utils/types";
 
-export const fetchWeather = createAsyncThunk(
+export const fetchWeather = createAsyncThunk<WeatherInfo, string>(
     'weather/fetchWeather',
-    async (city: string,) => {
+    async (city: string, { rejectWithValue }) => {
         try {
             const response = await fetch(`${base_url}?q=${city}&appid=${api_key}&units=metric`);
             if (!response.ok) {
@@ -17,9 +17,10 @@ export const fetchWeather = createAsyncThunk(
                 temp: data.main.temp,
                 pressure: data.main.pressure,
                 sunset: (new Date(data.sys.sunset * 1000)).toLocaleTimeString()
-            }as WeatherInfo;
+            };
         } catch (error) {
-            return error;
+            console.log('Weather fetch error:', error);
+            return rejectWithValue('Enter correct city name'); // ← строка, не объект Error
         }
     }
 );

@@ -20,8 +20,8 @@ const weatherSlice = createSlice({
                 state.pressure = action.payload.pressure;
                 state.sunset = action.payload.sunset;
             })
-            .addCase(fetchWeather.rejected, (_state, action) => {
-                console.log(Error, action.payload);
+            .addCase(fetchWeather.rejected, () => {
+                return {} as WeatherInfo;
             })
     }
 })
