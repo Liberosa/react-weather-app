@@ -20,7 +20,7 @@ export const fetchWeather = createAsyncThunk<WeatherInfo, string>(
             };
         } catch (error) {
             console.log('Weather fetch error:', error);
-            return rejectWithValue('Enter correct city name'); // ← строка, не объект Error
+            return rejectWithValue('Enter correct city name');
         }
     }
 );
