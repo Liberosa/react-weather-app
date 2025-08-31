@@ -6,3 +6,14 @@ export interface WeatherInfo {
     sunset: string;
     error?: string;
 }
+export interface WeatherInfoResponse {
+    name: string;
+    main: {
+        temp: number;
+        pressure: number;
+    }
+    sys: {
+        sunset: number;
+        country: string;
+    }
+}
